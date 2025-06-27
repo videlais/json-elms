@@ -1,0 +1,31 @@
+{
+    "workInformation": {
+        "title": "Test Work",
+        "workId": 1,
+        "workDescription": "A test work for validating JSON schema"
+    },
+    "versionInformation": {
+        "versionId": 1
+    },
+    "copyInformation": [
+        {
+            "copyId": 1,
+            "copy": "A test copy of the work"
+        }
+    ],
+    "entityInformation": [
+        {
+            "entityId": 1,
+            "entityName": "Test Entity",
+            "role": "Author"
+        }
+    ],
+    "worksExternalLinkInformation": [
+        {
+            "linkID": 1,
+            "externalLinkName": "website",
+            "externalLinkUrl": "https://example.com/test-work",
+            "externalLinkId": 1
+        }
+    ]
+}

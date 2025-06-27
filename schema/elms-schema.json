@@ -1,0 +1,527 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://example.com/elms-schema.json",
+  "title": "Extended eLectronic Metadata Schema (ELMS)",
+  "description": "Schema for electronic literature metadata",
+  "type": "object",
+  "properties": {
+    "workInformation": {
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Names the specific work to which the entry refers"
+        },
+        "workId": {
+          "type": "integer",
+          "description": "Identifies a work with a unique number"
+        },
+        "workDescription": {
+          "type": "string",
+          "description": "Provides detailed information about a work"
+        }
+      },
+      "required": ["title", "workId", "workDescription"]
+    },
+    "versionInformation": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string",
+          "description": "A version of a work is different from other versions in its code and it thus provides a distinct experience"
+        },
+        "versionId": {
+          "type": "integer",
+          "description": "Identifies a version of a work with a unique number"
+        },
+        "versionNumber": {
+          "type": "string",
+          "description": "Identifies the specific version of a work"
+        },
+        "versionLetter": {
+          "type": "string",
+          "description": "Modifies version number where needed in order to identify small differences between versions"
+        },
+        "galleryImages": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          },
+          "description": "Identifies images featured in the carousel for a work"
+        },
+        "galleryImageCaption": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Describes an image featured in the carousel for a work"
+        },
+        "imageHighlight": {
+          "type": "string",
+          "format": "uri",
+          "description": "Identifies an image that appears in carousels for a category or collection"
+        },
+        "imageThumbnail": {
+          "type": "string",
+          "format": "uri",
+          "description": "Identifies a smaller version of a full-sized image"
+        },
+        "originalPublicationStatus": {
+          "type": "string",
+          "enum": ["published", "unpublished"],
+          "description": "Identifies the status of a version of a work as either published or unpublished"
+        },
+        "incomplete": {
+          "type": "boolean",
+          "description": "Describes a work that was never finished as originally envisioned by the author"
+        },
+        "authorialVersion": {
+          "type": "boolean",
+          "description": "Identifies a given version of a work as the authoritative version and emphasizes it in search"
+        },
+        "originalPublicationMonth": {
+          "type": "string",
+          "description": "Identifies the month or season in which a version of a work was published"
+        },
+        "originalPublicationYear": {
+          "type": "integer",
+          "minimum": 1950,
+          "maximum": 2100,
+          "description": "Identifies the year in which a version of a work was published"
+        },
+        "originalPublicationType": {
+          "type": "string",
+          "description": "Describes unique versions of works and the containers in which they are collected"
+        },
+        "originalPublisher": {
+          "type": "string",
+          "description": "Identifies the individual or group responsible for publishing a specific version of a work"
+        },
+        "originalPublisherAuthority": {
+          "type": "string",
+          "format": "uri",
+          "description": "Locates the authority that identifies a publisher of a version of a work"
+        },
+        "originalVolume": {
+          "type": "string",
+          "description": "Identifies the volume of a journal that published a version of a work"
+        },
+        "originalIssue": {
+          "type": "string",
+          "description": "Identifies the issue of a journal that published a version of a work"
+        },
+        "originalMediaFormat": {
+          "type": "string",
+          "description": "Describes the type of physical media on which a version of a work resides"
+        },
+        "softwareDependencies": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Identifies software platforms, programs, and standards required to access and experience the work"
+        },
+        "authoringPlatform": {
+          "type": "string",
+          "description": "Describes the primary digital tool used in the production of a work"
+        },
+        "hardwareDependencies": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Identifies the kind of computing device and its onboard components required to access and experience the work"
+        },
+        "peripheralDependencies": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Describes additional hardware not integral to the ordinary function of the original computing device"
+        },
+        "computerLanguages": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Describes the code base used in the production of a work"
+        },
+        "digitalQualities": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Describes the technical aspects of a work"
+        },
+        "sensoryModalities": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Describes the sense(s) the work evokes"
+        },
+        "genres": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Describes the artistic genre(s) of a work"
+        },
+        "languages": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Identifies the language(s) used in creation and/or translation of a work"
+        },
+        "accessibility": {
+          "type": "string",
+          "description": "Describes the hardware, software, and physical aspects involved in accessing and experiencing the work"
+        },
+        "rightsNotice": {
+          "type": "string",
+          "description": "Describes the permissions an end user has been granted to use the work"
+        },
+        "eldLink": {
+          "type": "string",
+          "format": "uri",
+          "description": "Locates a version of a work in the Electronic Literature Directory (ELD)"
+        },
+        "elmcipLink": {
+          "type": "string",
+          "format": "uri",
+          "description": "Locates a version of a work in the Electronic Literature as a Model of Creativity and Innovation in Practice (ELMCIP) database"
+        },
+        "rebootingElectronicLiteratureLink": {
+          "type": "string",
+          "format": "uri",
+          "description": "Locates a version of a work in Rebooting Electronic Literature"
+        }
+      },
+      "required": ["versionId"]
+    },
+    "accessibilityInformation": {
+      "type": "object",
+      "properties": {
+        "contentTiming": {
+          "type": "string",
+          "description": "Describes the speed of a work's content"
+        },
+        "textFormat": {
+          "type": "string",
+          "description": "Describes how a work implements font families, font size, and effects"
+        },
+        "colorAndContrast": {
+          "type": "string",
+          "description": "Attends to partial visual disability and color blindness"
+        },
+        "visualImpact": {
+          "type": "string",
+          "description": "Describes visual elements that may startle, surprise, or be hazardous for visitors"
+        },
+        "auditory": {
+          "type": "string",
+          "description": "Describes sounds produced by the work"
+        },
+        "touch": {
+          "type": "string",
+          "description": "Describes how visitors interface with the work physically by making contact with screens, buttons, dials, etc."
+        },
+        "hapticFeedback": {
+          "type": "string",
+          "description": "Describes how the work registers meaningful physical feedback in a visitor's body"
+        },
+        "repetitiveMotion": {
+          "type": "string",
+          "description": "Describes works that require repetitive physical input from visitors"
+        },
+        "movementAndGesture": {
+          "type": "string",
+          "description": "The work registers the visitor's non-touch physical movements as input"
+        }
+      }
+    },
+    "copyInformation": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "copy": {
+            "type": "string",
+            "description": "Each copy of a version of a work is identical, though may differ in media format"
+          },
+          "copyId": {
+            "type": "integer",
+            "description": "Identifies a copy of a work with a unique number"
+          },
+          "copyImages": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uri"
+            },
+            "description": "Identifies images of a unique copy of a work"
+          },
+          "copyPublicationStatus": {
+            "type": "string",
+            "enum": ["published", "unpublished"],
+            "description": "Identifies the status of a copy of a version of a work as either published or unpublished"
+          },
+          "copyPublicationMonth": {
+            "type": "string",
+            "description": "Identifies the month or season in which a copy of a work was published"
+          },
+          "copyPublicationYear": {
+            "type": "integer",
+            "minimum": 1950,
+            "maximum": 2100,
+            "description": "Identifies the year in which a copy of a work was published"
+          },
+          "copyPublicationType": {
+            "type": "string",
+            "description": "Describes unique copies of works and the containers in which they are collected"
+          },
+          "copyPublisher": {
+            "type": "string",
+            "description": "Identifies the individual or group responsible for publishing a specific copy of a work"
+          },
+          "copyPublisherAuthority": {
+            "type": "string",
+            "format": "uri",
+            "description": "Locates the authority that identifies a publisher of a copy of a work"
+          },
+          "copyVolume": {
+            "type": "string",
+            "description": "Identifies the volume of a journal that published a copy of a work"
+          },
+          "copyIssue": {
+            "type": "string",
+            "description": "Identifies the issue of a journal that published a copy of a work"
+          },
+          "copyMediaFormat": {
+            "type": "string",
+            "description": "Describes the type of physical media on which a copy of a version of a work resides"
+          },
+          "originalUrl": {
+            "type": "string",
+            "format": "uri",
+            "description": "Locates where the copy of a work was initially hosted"
+          },
+          "hostedUrl": {
+            "type": "string",
+            "format": "uri",
+            "description": "Locates a copy of a work held locally within the archive"
+          },
+          "downloadLink": {
+            "type": "string",
+            "format": "uri",
+            "description": "Provides a copy of a work for download"
+          },
+          "provenance": {
+            "type": "string",
+            "description": "Provides the acquisition history of a particular copy of a version of a work"
+          },
+          "availability": {
+            "type": "string",
+            "description": "Indicates the extent to which a copy of a version of a work can be experienced"
+          },
+          "preservationMethods": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Describes process(es) used to make an outmoded copy of a version of a work able to be accessed and experienced"
+          },
+          "preservationNotes": {
+            "type": "string",
+            "description": "Provides information about how an outmoded copy of a version of a work was made to be accessed and experienced"
+          },
+          "lastTestedDate": {
+            "type": "string",
+            "format": "date",
+            "description": "Identifies when a preserved copy of a version of a work was last tested"
+          },
+          "lastTestedWith": {
+            "type": "string",
+            "description": "Identifies the hardware and software on and with which a preserved copy of a version of a work was tested"
+          }
+        },
+        "required": ["copyId"]
+      }
+    },
+    "entityInformation": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "entityName": {
+            "type": "string",
+            "description": "Identifies an individual or group involved in the production of a work"
+          },
+          "entityId": {
+            "type": "integer",
+            "description": "Identifies an individual or group involved in the production of a work with a unique number"
+          },
+          "nameAuthority": {
+            "type": "string",
+            "format": "uri",
+            "description": "Locates the authority that identifies an individual entity"
+          },
+          "entityType": {
+            "type": "string",
+            "enum": ["individual", "group"],
+            "description": "Identifies a producer of the work as an individual or a group"
+          },
+          "entityCountryOfOrigin": {
+            "type": "string",
+            "description": "Describes an entity's country of origin"
+          },
+          "role": {
+            "type": "string",
+            "description": "Identifies the function performed by an entity in the production of a work, as described by MARC relators"
+          },
+          "roleAbbreviation": {
+            "type": "string",
+            "description": "Abbreviates the function performed by an entity in the production of a work, as described by MARC relators"
+          },
+          "primaryRole": {
+            "type": "boolean",
+            "description": "Identifies the lead entity in the production of a work"
+          },
+          "rolePseudonym": {
+            "type": "string",
+            "description": "Identifies an alternative name used by an entity in the creation or publication of a version of a work"
+          },
+          "entityRoleId": {
+            "type": "integer",
+            "description": "Connects an entity with a copy or a version on the back end with a unique number while describing the role the entity performed"
+          }
+        },
+        "required": ["entityName", "entityId", "role"]
+      }
+    },
+    "collectionInformation": {
+      "type": "object",
+      "properties": {
+        "collectionId": {
+          "type": "integer",
+          "description": "Identifies a collection of works with a unique number"
+        },
+        "collectionName": {
+          "type": "string",
+          "description": "Identifies a collection of works"
+        },
+        "collectionDescription": {
+          "type": "string",
+          "description": "Provides detailed information about a collection of works"
+        },
+        "collectionHostedUrl": {
+          "type": "string",
+          "format": "uri",
+          "description": "Locates a collection of works in the archive"
+        },
+        "collectionMetaDescription": {
+          "type": "string",
+          "description": "Provides a truncated version of a collection's description for the purpose of search and findability"
+        },
+        "collectionMetaTitle": {
+          "type": "string",
+          "description": "Provides a version of a collection's title for the purpose of search and findability"
+        },
+        "collectionMetaKeywords": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Provides keywords for the purpose of search and findability"
+        },
+        "collectionImage": {
+          "type": "string",
+          "format": "uri",
+          "description": "Identifies an image that represents a collection of works in the archive"
+        },
+        "collectionHeaderImage": {
+          "type": "string",
+          "format": "uri",
+          "description": "Identifies an image that is featured at the top of a collection space"
+        },
+        "collectionVideoLink": {
+          "type": "string",
+          "format": "uri",
+          "description": "Locates a local video file that introduces a collection of works"
+        },
+        "collectionVideoExternalLink": {
+          "type": "string",
+          "format": "uri",
+          "description": "Locates an extended version of the video file hosted offsite that introduces a collection of works"
+        },
+        "collectionVideoThumbnail": {
+          "type": "string",
+          "format": "uri",
+          "description": "Identifies the cover image for a collection video"
+        },
+        "collectionType": {
+          "type": "string",
+          "description": "Describes how the works in a given collection of works are grouped and categorized"
+        },
+        "collectionProvenance": {
+          "type": "string",
+          "description": "Provides the acquisition history of a particular collection of works"
+        },
+        "startYearCollected": {
+          "type": "integer",
+          "minimum": 1950,
+          "maximum": 2100,
+          "description": "Identifies the earliest original publication year of works within a collection of works"
+        },
+        "endYearCollected": {
+          "type": "integer",
+          "minimum": 1950,
+          "maximum": 2100,
+          "description": "Identifies the latest original publication year of works within a collection of works"
+        },
+        "responsibility": {
+          "type": "string",
+          "description": "Identifies the individual or group responsible for the creation or management of a collection"
+        }
+      }
+    },
+    "worksExternalLinkInformation": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "externalLinkName": {
+            "type": "string",
+            "description": "Describes a piece of content located outside of the collection, version, or copy"
+          },
+          "externalLinkId": {
+            "type": "integer",
+            "description": "Identifies a piece of content located outside of the collection with a unique number"
+          },
+          "externalLinkUrl": {
+            "type": "string",
+            "format": "uri",
+            "description": "Locates a piece of content not affiliated with The NEXT, ELD, ELMCIP, or Rebooting Electronic Literature"
+          }
+        },
+        "required": ["externalLinkName", "externalLinkId", "externalLinkUrl"]
+      }
+    },
+    "globalInformation": {
+      "type": "object",
+      "properties": {
+        "altText": {
+          "type": "string",
+          "description": "Provides a metadescription of an image file at the collection and version levels for the purposes of accessibility"
+        },
+        "notes": {
+          "type": "string",
+          "description": "Provides further information at the work, version, and copy levels where needed"
+        }
+      }
+    }
+  },
+  "required": ["workInformation"]
+}
