@@ -42,26 +42,6 @@
           "type": "string",
           "description": "Modifies version number where needed in order to identify small differences between versions"
         },
-        "galleryImages": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "format": "uri"
-          },
-          "description": "Identifies images featured in the carousel for a work"
-        },
-        "galleryImageCaption": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          },
-          "description": "Describes an image featured in the carousel for a work"
-        },
-        "imageHighlight": {
-          "type": "string",
-          "format": "uri",
-          "description": "Identifies an image that appears in carousels for a category or collection"
-        },
         "imageThumbnail": {
           "type": "string",
           "format": "uri",
@@ -206,38 +186,47 @@
       "properties": {
         "contentTiming": {
           "type": "string",
+          "enum": ["fleeting content", "rapidly moving content"],
           "description": "Describes the speed of a work's content"
         },
         "textFormat": {
           "type": "string",
+          "enum": ["italics", "light fonts", "moving text", "other inaccessible text", "rasterized text", "sans-serif fonts", "serif fonts", "script fonts", "short reading time", "small fonts"],
           "description": "Describes how a work implements font families, font size, and effects"
         },
         "colorAndContrast": {
           "type": "string",
+          "enum": ["color impacts navigation", "color impacts content", "low contrast (occasional)", "low contrast (frequent)", "low contrast (throughout)", "visual noise"],
           "description": "Attends to partial visual disability and color blindness"
         },
         "visualImpact": {
           "type": "string",
+          "enum": ["sudden visual transition(s)", "flashing lights hazard", "blinking lights hazard"],
           "description": "Describes visual elements that may startle, surprise, or be hazardous for visitors"
         },
         "auditory": {
           "type": "string",
+          "enum": ["sudden sounds", "inconsistent volume", "high-pitch sounds", "low-pitch sounds"],
           "description": "Describes sounds produced by the work"
         },
         "touch": {
           "type": "string",
+          "enum": ["capacitive touchscreen", "cursor click", "cursor movement", "text input", "physical buttons (mouse)", "physical buttons (other)", "joystick(s)", "directional input", "physical dial(s)", "physical switch(es)", "cursor drag", "persistent grip", "other"],
           "description": "Describes how visitors interface with the work physically by making contact with screens, buttons, dials, etc."
         },
         "hapticFeedback": {
           "type": "string",
+          "enum": ["adaptive input", "mobile device (vibration)", "controller (vibration)", "haptic gloves", "full-body haptics"],
           "description": "Describes how the work registers meaningful physical feedback in a visitor's body"
         },
         "repetitiveMotion": {
           "type": "string",
+          "enum": ["frequent repetitive key presses", "frequent repetitive gestures", "other repetitive motion"],
           "description": "Describes works that require repetitive physical input from visitors"
         },
         "movementAndGesture": {
           "type": "string",
+          "enum": ["eye movement", "head tracking", "spatial peripheral manipulation", "interoception", "proprioception", "facial recognition", "fine motor control"],
           "description": "The work registers the visitor's non-touch physical movements as input"
         }
       }

@@ -1,13 +1,21 @@
 {
   "name": "json-elms",
-  "version": "0.5.0",
+  "version": "1.0.0",
   "description": "Defines a JSON schema + validator for e-literature collections building on the Extended eLectronic Metadata Schema (ELMS)",
-  "main": "src/validate.js",
+  "main": "dist/src/validate.js",
+  "exports": {
+    ".": {
+      "import": "./dist/src/validate.js",
+      "require": "./dist/src/validate.js"
+    },
+    "./schema": "./schema/elms-schema.json"
+  },
   "scripts": {
-    "test": "node --experimental-test-coverage --test test/validate.test.js",
-    "lint": "eslint src/*.js",
-    "lint:test": "eslint test/*.test.js",
-    "all": "npm run lint && npm run lint:test && npm test"
+    "test": "node --experimental-test-coverage --test dist/test/validate.test.js",
+    "lint": "eslint src/*.ts",
+    "lint:test": "eslint test/*.test.ts",
+    "compile": "tsc",
+    "all": "npm run lint && npm run lint:test && npm run compile && npm test"
   },
   "keywords": [
     "elit",
@@ -19,6 +27,9 @@
   ],
   "author": "Dan Cox",
   "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "devEngines": {
     "runtime": {
       "name": "node",
@@ -31,13 +42,17 @@
   },
   "type": "module",
   "dependencies": {
+    "@types/node": "^24.0.7",
     "jsonschema": "^1.5.0"
   },
   "devDependencies": {
-    "eslint-plugin-jest": "^29.0.1",
-    "@eslint/js": "^9.29.0",
+    "@eslint/js": "^9.30.0",
     "@eslint/json": "^0.12.0",
-    "eslint": "^9.29.0",
-    "globals": "^16.2.0"
+    "@tsconfig/recommended": "^1.0.10",
+    "eslint": "^9.30.0",
+    "eslint-plugin-jest": "^29.0.1",
+    "globals": "^16.2.0",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.35.0"
   }
 }
