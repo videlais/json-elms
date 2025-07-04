@@ -1,0 +1,246 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Content Warnings Schema",
+  "description": "Schema for content warnings categorization",
+  "type": "object",
+  "properties": {
+    "harmToSelf": {
+      "type": "object",
+      "description": "Content warnings related to harm to self",
+      "properties": {
+        "mentalSelfAbuse": {
+          "type": "boolean",
+          "description": "Mental Self Abuse"
+        },
+        "physicalSelfAbuse": {
+          "type": "boolean",
+          "description": "Physical Self Abuse"
+        },
+        "selfFlagellation": {
+          "type": "boolean",
+          "description": "Self-Flagellation"
+        },
+        "suicidalIdeation": {
+          "type": "boolean",
+          "description": "Suicidal Ideation"
+        },
+        "eatingDisorders": {
+          "type": "boolean",
+          "description": "Eating Disorders"
+        },
+        "bodyHatred": {
+          "type": "boolean",
+          "description": "Body Hatred"
+        }
+      }
+    },
+    "hatred": {
+      "type": "object",
+      "description": "Content warnings related to hatred",
+      "properties": {
+        "bigotry": {
+          "type": "boolean",
+          "description": "Bigotry"
+        },
+        "racism": {
+          "type": "boolean",
+          "description": "Racism"
+        },
+        "sexism": {
+          "type": "boolean",
+          "description": "Sexism"
+        },
+        "ableism": {
+          "type": "boolean",
+          "description": "Ableism"
+        },
+        "transphobia": {
+          "type": "boolean",
+          "description": "Transphobia"
+        },
+        "homophobia": {
+          "type": "boolean",
+          "description": "Homophobia"
+        },
+        "biphobia": {
+          "type": "boolean",
+          "description": "Biphobia"
+        },
+        "classism": {
+          "type": "boolean",
+          "description": "Classism"
+        },
+        "xenophobia": {
+          "type": "boolean",
+          "description": "Xenophobia"
+        },
+        "hatefulLanguage": {
+          "type": "boolean",
+          "description": "Hateful language directed at marginalized groups"
+        },
+        "hatefulLanguageReligious": {
+          "type": "boolean",
+          "description": "Hateful language directed at religious groups (e.g., Islamophobia, anti-Semitism)"
+        },
+        "ageism": {
+          "type": "boolean",
+          "description": "Ageism"
+        },
+        "fatphobia": {
+          "type": "boolean",
+          "description": "Fatphobia"
+        },
+        "heterosexism": {
+          "type": "boolean",
+          "description": "Heterosexism"
+        },
+        "misogyny": {
+          "type": "boolean",
+          "description": "Misogyny"
+        },
+        "misandry": {
+          "type": "boolean",
+          "description": "Misandry"
+        },
+        "misogynoir": {
+          "type": "boolean",
+          "description": "Misogynoir (misogyny directed at Black women)"
+        }
+      }
+    },
+    "harmToOthers": {
+      "type": "object",
+      "description": "Content warnings related to harm to others",
+      "properties": {
+        "sexualAssault": {
+          "type": "boolean",
+          "description": "Sexual Assault"
+        },
+        "intimatePartnerViolence": {
+          "type": "boolean",
+          "description": "Intimate Partner Violence"
+        },
+        "explicitViolence": {
+          "type": "boolean",
+          "description": "Explicit Violence"
+        },
+        "implicitOrOffscreenViolence": {
+          "type": "boolean",
+          "description": "Implicit or Offscreen Violence"
+        },
+        "torture": {
+          "type": "boolean",
+          "description": "Torture"
+        },
+        "murder": {
+          "type": "boolean",
+          "description": "Murder"
+        },
+        "manslaughter": {
+          "type": "boolean",
+          "description": "Manslaughter"
+        },
+        "kidnapping": {
+          "type": "boolean",
+          "description": "Kidnapping"
+        },
+        "abduction": {
+          "type": "boolean",
+          "description": "Abduction"
+        }
+      }
+    },
+    "harmInvolvingChildren": {
+      "type": "object",
+      "description": "Content warnings related to harm involving or directed at children",
+      "properties": {
+        "childAbuse": {
+          "type": "boolean",
+          "description": "Child Abuse"
+        },
+        "pedophilia": {
+          "type": "boolean",
+          "description": "Pedophilia"
+        },
+        "incest": {
+          "type": "boolean",
+          "description": "Incest"
+        }
+      }
+    },
+    "harmInvolvingAnimals": {
+      "type": "object",
+      "description": "Content warnings related to harm involving or directed at animals",
+      "properties": {
+        "animalViolence": {
+          "type": "boolean",
+          "description": "Depicted violence toward animals"
+        },
+        "animalCruelty": {
+          "type": "boolean",
+          "description": "Animal cruelty"
+        },
+        "animalDeath": {
+          "type": "boolean",
+          "description": "Animal death"
+        }
+      }
+    },
+    "sexualContent": {
+      "type": "object",
+      "description": "Content warnings related to sexual content",
+      "properties": {
+        "nudity": {
+          "type": "boolean",
+          "description": "Nudity"
+        },
+        "explicitSexualActs": {
+          "type": "boolean",
+          "description": "Explicit Sexual Acts"
+        }
+      }
+    },
+    "bodilyFluidsOrFunctions": {
+      "type": "object",
+      "description": "Content warnings related to bodily fluids or functions",
+      "properties": {
+        "blood": {
+          "type": "boolean",
+          "description": "Blood"
+        },
+        "gore": {
+          "type": "boolean",
+          "description": "Gore"
+        },
+        "urination": {
+          "type": "boolean",
+          "description": "Urination"
+        },
+        "defecation": {
+          "type": "boolean",
+          "description": "Defecation"
+        },
+        "depictionOfDismemberment": {
+          "type": "boolean",
+          "description": "Depiction of Dismemberment"
+        },
+        "pregnancy": {
+          "type": "boolean",
+          "description": "Pregnancy"
+        },
+        "childbirth": {
+          "type": "boolean",
+          "description": "Childbirth"
+        },
+        "miscarriages": {
+          "type": "boolean",
+          "description": "Miscarriages"
+        },
+        "abortion": {
+          "type": "boolean",
+          "description": "Abortion"
+        }
+      }
+    }
+  }
+}
